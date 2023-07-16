@@ -34,7 +34,7 @@ num_to_char = layers.experimental.preprocessing.StringLookup(
 )
 
 
-def encode_single_sample(img_path, label=None, img_height=50, img_width=200):
+def encode_single_sample(img, label=None, img_height=50, img_width=200):
     '''
     img : 이미지(Bytes)
     label : 이미지 라벨(라벨링된 이미지일 경우)
@@ -42,12 +42,12 @@ def encode_single_sample(img_path, label=None, img_height=50, img_width=200):
     img_width : 이미지 가로 사이즈
     '''
     # 1. 이미지를 불러옵시다.
-    img = tf.io.read_file(img_path)
+    # img = tf.io.read_file(img_path)
     img = im.reverse_bg(img)
     # 2. png 이미지로 변환하고, 해당 이미지를 grayscale로 변환합시다.
-    _, edcoded_img = cv2.imencode('.png', img)
+    _, edcoded_img = cv2.imencode('.png', img)   #? 이미지 바이트 형식으로 변환
     byte_data = edcoded_img.tobytes()
-    img = tf.convert_to_tensor(byte_data)   #nparray 데이터 바이트타입으로 변환
+    img = tf.convert_to_tensor(byte_data)   #np.array 데이터 바이트타입으로 변환
     img = tf.io.decode_png(img, channels=1)
     
     # 3. [0, 255]의 정수 범위를 [0, 1]의 실수 범위로 바꿉시다.

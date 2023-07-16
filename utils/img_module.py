@@ -65,10 +65,10 @@ class ImageModule():
         images : cv2.imread한 이미지들의 리스트 
         '''
         result = []
-        
+        img = image
         # for idx, img in enumerate(images):
-        encoded_img = np.frombuffer(image.numpy(), dtype=np.uint8)
-        img = cv2.imdecode(encoded_img, cv2.IMREAD_COLOR)
+        # encoded_img = np.frombuffer(image.numpy(), dtype=np.uint8)    #? 이미지 타입이 byte로 들어왔을 때 사용
+        # img = cv2.imdecode(encoded_img, cv2.IMREAD_COLOR)
         # 그레이스케일로 변환
         gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

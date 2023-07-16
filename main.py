@@ -19,10 +19,10 @@ BW_MODEL_PATH = 'models/bw_captcha_model/'
 model_list = {}
 im = ImageModule()
 
-async def save_file(file: IO):
-    with NamedTemporaryFile("wb", delete=False) as tempfile:
-        tempfile.write(file.read())
-        return tempfile.name
+# async def save_file(file: IO):   #업로드 이미지 저장코드
+#     with NamedTemporaryFile("wb", delete=False) as tempfile:
+#         tempfile.write(file.read())
+#         return tempfile.name
 
 # PIL 이미지를 TensorFlow의 tf.Tensor 형식으로 변환하는 함수
 def pil_to_tensor(pil_image):
@@ -40,17 +40,16 @@ def pil_to_tensor(pil_image):
 @app.post("/read_captcha")
 async def read_captcha(file: UploadFile = File(...)):
     bw_cap_model = model_list['bw_cap_model'] 
-    path = await save_file(file.file)
-    print("path: ", path)   #받아온 이미지 경로
-    """contents = await file.read()  #Bytes형태로 이미지 반환
+    # path = await save_file(file.file)
+    contents = await file.read()  #Bytes형태로 이미지 반환
     #전처리 수행
     image = Image.open(file.file)
-    print("image : ", image, "\n", type(image))
+    # print("image : ", image, "\n", type(image))
     #PIL 이미지를 TensorFlow의 tf.Tensor 형식으로 변환
     image_tensor = pil_to_tensor(image)
-    print("image_tensor : ", image_tensor, "\n", type(image_tensor))"""
+    # print("image_tensor : ", image_tensor, "\n", type(image_tensor))
    
-    test_img = encode_single_sample(path, img_height=50, img_width=200)
+    test_img = encode_single_sample(image_tensor.numpy(), img_height=50, img_width=200)
     test_img_array = np.array([test_img['image'].numpy()] * 1)
     # 모델테스트 
     preds = bw_cap_model.predict(test_img_array)

@@ -16,7 +16,7 @@ from utils.img_module import ImageModule as im
 
 class LoadModel():
     '''
-        모델 하나단 Load_Model 하나씩 생성할 것
+        모델 하나당 Load_Model 하나씩 생성할 것
     '''
     
     def __init__(self, model_path):

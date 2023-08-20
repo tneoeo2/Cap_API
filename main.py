@@ -38,12 +38,6 @@ def pil_to_tensor(pil_image):
 
 @app.get("/")
 def root():
-    print("Server started.")
-    
-    tf_model = LoadModel(BW_MODEL_PATH).load_bw_model(summary=True)
-    model_list['bw_cap_model'] = tf_model
-    print("Model List: {}".format(model_list))
-    
     return {"Hello, world!"}
 
 

@@ -61,7 +61,7 @@ async def read_captcha(file: UploadFile = File(...)):
     return {"filename": file.filename, "preds": pred_texts}
 
 def start_server():
-    uvicorn.run(app, host="0.0.0.0", port=8888)   #이 밑의 코드는 실행되지 ㅇ낳는 다.
+    uvicorn.run(app, host="0.0.0.0", port=8888)   #이 밑의 코드는 실행되지 않는다.
     
 if __name__ == "__main__":
     server_thread = threading.Thread(target=start_server)

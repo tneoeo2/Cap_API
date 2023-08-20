@@ -36,9 +36,20 @@ def pil_to_tensor(pil_image):
 
     return image_tensor
 
+@app.get("/")
+def root():
+    print("Server started.")
+    
+    tf_model = LoadModel(BW_MODEL_PATH).load_bw_model(summary=True)
+    model_list['bw_cap_model'] = tf_model
+    print("Model List: {}".format(model_list))
+    
+    return {"Hello, world!"}
+
 
 @app.post("/read_captcha")
 async def read_captcha(file: UploadFile = File(...)):
+   
     bw_cap_model = model_list['bw_cap_model'] 
     # path = await save_file(file.file)
     contents = await file.read()  #Bytes형태로 이미지 반환
@@ -60,19 +71,22 @@ async def read_captcha(file: UploadFile = File(...)):
 
     return {"filename": file.filename, "preds": pred_texts}
 
+
+
 def start_server():
     uvicorn.run(app, host="0.0.0.0", port=8888)   #이 밑의 코드는 실행되지 않는다.
     
-# if __name__ == "__main__":
-server_thread = threading.Thread(target=start_server)
-# 서버가 실행되는 동안 다른 코드 실행 가능
-server_thread.start()
-print("Server started.")
-
-tf_model = LoadModel(BW_MODEL_PATH).load_bw_model(summary=True)
-model_list['bw_cap_model'] = tf_model
-print("Model List: {}".format(model_list))
-
-# 서버 스레드가 종료되길 기다림
-server_thread.join()
-print("Server stopped.")
+if __name__ == "__main__":
+    server_thread = threading.Thread(target=start_server)
+    # 서버가 실행되는 동안 다른 코드 실행 가능
+    server_thread.start()
+    print("Server started.")
+    
+    tf_model = LoadModel(BW_MODEL_PATH).load_bw_model(summary=True)
+    model_list['bw_cap_model'] = tf_model
+    print("Model List: {}".format(model_list))
+    
+    # 서버 스레드가 종료되길 기다림
+    server_thread.join()
+    print("Server stopped.")
+   

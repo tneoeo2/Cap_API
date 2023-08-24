@@ -29,7 +29,7 @@ class LoadModel():
         # Load the saved model
         print("Loading model: {}".format(self.model_path))
         # loaded_model = tf.saved_model.load(self.model_path)
-        loaded_model = keras.models.load_model(self.model_path)
+        loaded_model = keras.models.load_model(self.model_path, compile=False)
         print("building...")
         model = self.build_model(loaded_model)
         
@@ -41,14 +41,10 @@ class LoadModel():
     
     
     def build_model(self, loaded):
-        print("Building model...1")
         x = tf.keras.layers.Input(shape=(200, 50, 1), name='input_x')
-        print("Building model...2 : ", x)
         # 불러온 것을 케라스 레이어로 감쌉니다.
         keras_layer = hub.KerasLayer(loaded, trainable=True)(x)
-        print("Building model...3 : ", keras_layer)
         model = tf.keras.Model(x, keras_layer)
-        print("Building model...4 : ", model)
     
         return model
 

@@ -36,7 +36,6 @@ def pil_to_tensor(pil_image):
 
     return image_tensor
 
-#접속 테스트용
 @app.get("/")
 def root():
     return {"Hello, world!"}
@@ -70,7 +69,7 @@ async def read_captcha(file: UploadFile = File(...)):
 
 
 def start_server():
-    uvicorn.run(app, host="0.0.0.0", port=8888)   #이 밑의 코드는 실행되지 않는다.
+    uvicorn.run(app, host="0.0.0.0", port=8888)   
     
 if __name__ == "__main__":
     server_thread = threading.Thread(target=start_server)

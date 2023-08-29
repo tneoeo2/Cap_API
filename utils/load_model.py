@@ -62,4 +62,3 @@ class LoadModel():
 # tf_model = LoadModel(BW_MODEL_PATH).load_bw_model()
 # print("Model loading...")
 # print(tf_model.summary())
-

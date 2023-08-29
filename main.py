@@ -36,6 +36,7 @@ def pil_to_tensor(pil_image):
 
     return image_tensor
 
+#접속 테스트용
 @app.get("/")
 def root():
     return {"Hello, world!"}

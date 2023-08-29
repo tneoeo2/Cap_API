@@ -1,6 +1,6 @@
 # Cap_API
 알파벳 이미지 캡차서버
-
+*이미지 형식은 .png 만 지원*
 
 ### Dependency
 ```
@@ -25,6 +25,6 @@ python main.py
   │  img_processing.py   //이미지 전처리
   └─ load_model.py    //모델 불러오기
 ```
-*이미지 형식은 .png 만 지원*
+
 
 

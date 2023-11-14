@@ -6,6 +6,7 @@
 ### Dependency
 ```
 python 3.8
+tensorflow 2.7.0
 ```
 
 ### Getting Started

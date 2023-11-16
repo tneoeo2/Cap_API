@@ -6,10 +6,7 @@
 <br>*이미지 형식은 .png 만 지원*
 
 ### 기술 스택
-<img src="https://img.shields.io/badge/python3.8-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/tensorflow2.7.0-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white">
-<img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white">
-<img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencvn&logoColor=white">
+<img src="https://img.shields.io/badge/python3.8-3776AB?style=for-the-badge&logo=python&logoColor=white"><img src="https://img.shields.io/badge/tensorflow2.7.0-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"><img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white"><img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencvn&logoColor=white">
 
 
 ### Dependency
@@ -46,7 +43,7 @@ python main.py
 -  selenium + opencv를 활용하여 이미지 수집 자동화
 - 수집한 이미지 라벨링 진행 
   - opencv의 키보드 이벤트를 활용하여 라벨링진행 `이미지의 알파벳 6자리.png로 파일명 변경`
-![Alt text|400](imgs/image.png)
+![Alt text|300](imgs/image.png)
  
   
 #### 이미지 학습환경 구성 + 이미지 학습

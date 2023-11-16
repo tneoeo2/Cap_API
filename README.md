@@ -34,8 +34,8 @@ python main.py
   │  img_processing.py   //이미지 전처리
   └─ load_model.py    //모델 불러오기
 ```
-- utils.py : 이미지처리 및 모델 사용에 필요한 함수들을 담은 폴더
-- models.py : 학습된 모델이 담긴 폴더
+- utils : 이미지처리 및 모델 사용에 필요한 함수들을 담은 폴더
+- models : 학습된 모델이 담긴 폴더
 - main.py : api 서버 실행
 
 ### 구현과정

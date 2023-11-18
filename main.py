@@ -41,7 +41,7 @@ def root():
     return {"Hello, world!"}
 
 
-@app.post("/read_captcha")
+@app.post("/captcha")
 async def read_captcha(file: UploadFile = File(...)):
     try:
         bw_cap_model = model_list['bw_cap_model'] 

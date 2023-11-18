@@ -83,7 +83,7 @@ python main.py
   | 전처리 전 | 전처리 후 |
   |:---:|:---:|
   | <img src='imgs/aadmpz_before.png' width='210'> | <img src='imgs/aadmpz_after.png' width='210'> | 
-  |||
+
 
   
   

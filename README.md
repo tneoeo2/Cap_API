@@ -1,32 +1,32 @@
 # Cap_API
 
 ### 개요
----
+
 - 알파벳 이미지 캡차서버  
 - 알파벳 6자리로 구성된 캡차이미지를 인식하여 결과값을 반환합니다.
 <br>*이미지 형식은 .png 만 지원*
 
 ### 기술 스택
----
+
 <img src="https://img.shields.io/badge/python3.8-3776AB?style=for-the-badge&logo=python&logoColor=white"><img src="https://img.shields.io/badge/tensorflow2.7.0-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"><img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white"><img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencvn&logoColor=white">
 
 
 ### Dependency
----
+
 ```
 python 3.8
 tensorflow 2.7.0
 ```
 
 ### Getting Started
----
+
 ```
 pip install -r requirements.txt 
 python main.py
 ```
 
 ### 폴더 구조
----
+
 ```
 │  main.py     //API 서버 실행 
 │  README.md
@@ -44,7 +44,7 @@ python main.py
 - main.py : api 서버 실행
 
 ### 구현과정
----
+
 #### 데이터 수집 + 라벨링
 -  selenium + opencv를 활용하여 이미지 수집 자동화 
 - 수집한 이미지 라벨링 진행 (약 500여장)
@@ -73,9 +73,8 @@ python main.py
 }
 ```
 
-
 ### ISSUE
----
+
 - 이미지인식 정확도 개선
 >  전처리를 통해 해결 : <br>
   학습시키려는 이미지 흑백처리 -> 일정 크기 이하의 노이즈 컨투어를 구하여 색상을 배경색과 비슷하게 변경하여 재학습

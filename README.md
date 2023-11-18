@@ -78,9 +78,13 @@ python main.py
 - 이미지인식 정확도 개선
 >  전처리를 통해 해결 : <br>
   학습시키려는 이미지 흑백처리 -> 일정 크기 이하의 노이즈 컨투어를 구하여 색상을 배경색과 비슷하게 변경하여 재학습
-  - 전처리 전<br>
-  <img src='imgs/aadmpz_before.png' width='210'>
 
-  - 전처리 후<br>
-  <img src='imgs/aadmpz_after.png' width='210'>
+
+  | 전처리 전 | 전처리 후 |
+  |:---:|:---:|
+  | <img src='imgs/aadmpz_before.png' width='210'> | <img src='imgs/aadmpz_after.png' width='210'> | 
+  |||
+
+  
+  
 

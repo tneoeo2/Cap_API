@@ -85,6 +85,3 @@ python main.py
   | <img src='imgs/aadmpz_before.png' width='210'> | <img src='imgs/aadmpz_after.png' width='210'> | 
 
 
-  
-  
-
